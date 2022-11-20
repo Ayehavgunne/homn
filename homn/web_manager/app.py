@@ -1,9 +1,13 @@
 import uvicorn
-from tonberry import File, create_app, expose
+from homn.web_manager.auth import Auth
+from tonberry import File, alias, create_app, expose
 from tonberry.content_types import TextHTML
 
 
 class Root:
+    auth = Auth()
+    login = alias("index")
+
     @expose.get
     async def index(self) -> TextHTML:
         return File("frontend/dist/index.html")
