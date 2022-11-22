@@ -1,15 +1,16 @@
 import type { Component } from "solid-js"
 
-import style from "./login.module.css"
+import styles from "./login.module.sass"
 
 let Login: Component = () => {
 	return (
-		<form action="/auth" method="post" style={style.login}>
-			<label>
+		<form action="/auth" method="post" class={styles.form}>
+			<h3>Login</h3>
+			<label class={styles.label}>
 				Username:
-				<input type="username" name="username" />
+				<input name="username" />
 			</label>
-			<label>
+			<label class={styles.label}>
 				Password:
 				<input type="password" name="password" />
 			</label>
